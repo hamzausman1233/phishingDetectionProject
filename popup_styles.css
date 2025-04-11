@@ -1,0 +1,13 @@
+/* popup_styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 0;
+}
+h2 {
+  margin-top: 0;
+}
+p, li {
+  font-size: 14px;
+}
+

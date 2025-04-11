@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Email Detector",
+  "version": "1.0",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5000/*",
+    "https://mail.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Phishing Report"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "front_end.html",
+        "front_end.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
